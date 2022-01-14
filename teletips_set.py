@@ -1,9 +1,3 @@
-#Copyright ©️ 2021 TeLe TiPs. All Rights Reserved
-#You are free to use this code in any of your project, but you MUST include the following in your README.md (Copy & paste)
-# ##Credits - [Countdown Timer Telegram bot by TeLe TiPs] (https://github.com/teletips/CountdownTimer-TeLeTiPs)
-
-# Changing the code is not allowed! Read GNU AFFERO GENERAL PUBLIC LICENSE: https://github.com/teletips/CountdownTimer-TeLeTiPs/blob/main/LICENSE
- 
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import os
@@ -13,7 +7,7 @@ from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.raw.functions.messages import UpdatePinnedMessage
 
 bot=Client(
-    "Countdown-TeLeTiPs",
+    "Countdown-SVF",
     api_id = int(os.environ["API_ID"]),
     api_hash = os.environ["API_HASH"],
     bot_token = os.environ["BOT_TOKEN"]
@@ -21,14 +15,14 @@ bot=Client(
 
 stoptimer = False
 
-TELETIPS_MAIN_MENU_BUTTONS = [
+SVF_MAIN_MENU_BUTTONS = [
             [
                 InlineKeyboardButton('❓ HELP', callback_data="HELP_CALLBACK")
             ],
             [
                 InlineKeyboardButton('👥 GROUP', callback_data="GROUP_CALLBACK"),
-                InlineKeyboardButton('📣 CHANNEL', url='https://t.me/teletipsofficialchannel'),
-                InlineKeyboardButton('👨‍💻 CREATOR', url='https://t.me/thakshakar')
+                InlineKeyboardButton('📣 CHANNEL', url='https://t.me/SLSVF'),
+                InlineKeyboardButton('👨‍💻 CREATOR', url='https://t.me/WhiteDevilOp999')
             ],
             [
                 InlineKeyboardButton('➕ CREATE YOUR BOT ➕', callback_data="TUTORIAL_CALLBACK")
@@ -38,7 +32,7 @@ TELETIPS_MAIN_MENU_BUTTONS = [
 @bot.on_message(filters.command(['start','help']) & filters.private)
 async def start(client, message):
     text = START_TEXT
-    reply_markup = InlineKeyboardMarkup(TELETIPS_MAIN_MENU_BUTTONS)
+    reply_markup = InlineKeyboardMarkup(SVF_MAIN_MENU_BUTTONS)
     await message.reply(
         text=text,
         reply_markup=reply_markup,
@@ -63,18 +57,18 @@ async def callback_query(client: Client, query: CallbackQuery):
             pass
 
     elif query.data=="GROUP_CALLBACK":
-        TELETIPS_GROUP_BUTTONS = [
+        SVF_GROUP_BUTTONS = [
             [
-                InlineKeyboardButton("🇱🇰 Anytime Any Qs", url="https://t.me/AnytimeAnyQs")
+                InlineKeyboardButton("🇱🇰 Anytime Any Qs", url="https://t.me/WhiteDevilOp999")
             ],
             [
-                InlineKeyboardButton("🌎 TeLe TiPs", url="https://t.me/teletipsofficialontopicchat")
+                InlineKeyboardButton("🌎 SVF OFFICIAL", url="https://t.me/SLSVF")
             ],
             [
                 InlineKeyboardButton("⬅️ BACK", callback_data="START_CALLBACK"),
             ]
             ]
-        reply_markup = InlineKeyboardMarkup(TELETIPS_GROUP_BUTTONS)
+        reply_markup = InlineKeyboardMarkup(SVF_GROUP_BUTTONS)
         try:
             await query.edit_message_text(
                 GROUP_TEXT,
@@ -84,15 +78,15 @@ async def callback_query(client: Client, query: CallbackQuery):
             pass    
 
     elif query.data=="TUTORIAL_CALLBACK":
-        TELETIPS_TUTORIAL_BUTTONS = [
+        SVF_TUTORIAL_BUTTONS = [
             [
-                InlineKeyboardButton("🎥 Video", url="https://t.me/TeLeTiPsOfficialChannel/462")
+                InlineKeyboardButton("🎥 Video", url="https://t.me/SLSVF/5519")
             ],
             [
                 InlineKeyboardButton("⬅️ BACK", callback_data="START_CALLBACK"),
             ]
             ]
-        reply_markup = InlineKeyboardMarkup(TELETIPS_TUTORIAL_BUTTONS)
+        reply_markup = InlineKeyboardMarkup(SVF_TUTORIAL_BUTTONS)
         try:
             await query.edit_message_text(
                 TUTORIAL_TEXT,
@@ -102,20 +96,20 @@ async def callback_query(client: Client, query: CallbackQuery):
             pass      
           
     elif query.data=="START_CALLBACK":
-        TELETIPS_START_BUTTONS = [
+        SVF_START_BUTTONS = [
             [
                 InlineKeyboardButton('❓ HELP', callback_data="HELP_CALLBACK")
             ],
             [
                 InlineKeyboardButton('👥 GROUP', callback_data="GROUP_CALLBACK"),
-                InlineKeyboardButton('📣 CHANNEL', url='https://t.me/teletipsofficialchannel'),
-                InlineKeyboardButton('👨‍💻 CREATOR', url='https://t.me/thakshakar')
+                InlineKeyboardButton('📣 CHANNEL', url='https://t.me/SLSVF'),
+                InlineKeyboardButton('👨‍💻 CREATOR', url='https://t.me/WhiteDevilOp999')
             ],
             [
                 InlineKeyboardButton('➕ CREATE YOUR BOT ➕', callback_data="TUTORIAL_CALLBACK")
             ]
         ]
-        reply_markup = InlineKeyboardMarkup(TELETIPS_START_BUTTONS)
+        reply_markup = InlineKeyboardMarkup(SVF_START_BUTTONS)
         try:
             await query.edit_message_text(
                 START_TEXT,
@@ -143,16 +137,16 @@ async def set_timer(client, message):
             if 0<user_input_time<=10:
                 while user_input_time and not stoptimer:
                     s=user_input_time%60
-                    Countdown_TeLe_TiPs='{}\n\n⏳ {:02d}**s**\n\n<i>"Your **Time** Is Limited, So Don\'t Waste It Living Someone Else\'s Life"</i>\n      - Steve Jobs'.format(user_input_event, s)
-                    finish_countdown = await get_user_input_time.edit(Countdown_TeLe_TiPs)
+                    Countdown_SVF='{}\n\n⏳ {:02d}**s**\n\n<i>"Your **Time** Is Limited, So Don\'t Waste It Living Someone Else\'s Life"</i>\n      - Steve Jobs'.format(user_input_event, s)
+                    finish_countdown = await get_user_input_time.edit(Countdown_SVF)
                     await asyncio.sleep(1)
                     user_input_time -=1
                 await finish_countdown.edit("🚨 Beep! Beep!! **TIME'S UP!!!**")
             elif 10<user_input_time<60:
                 while user_input_time>0 and not stoptimer:
                     s=user_input_time%60
-                    Countdown_TeLe_TiPs='{}\n\n⏳ {:02d}**s**\n\n<i>"Your **Time** Is Limited, So Don\'t Waste It Living Someone Else\'s Life"</i>\n      - Steve Jobs'.format(user_input_event, s)
-                    finish_countdown = await get_user_input_time.edit(Countdown_TeLe_TiPs)
+                    Countdown_SVF='{}\n\n⏳ {:02d}**s**\n\n<i>"Your **Time** Is Limited, So Don\'t Waste It Living Someone Else\'s Life"</i>\n      - Steve Jobs'.format(user_input_event, s)
+                    finish_countdown = await get_user_input_time.edit(Countdown_SVF)
                     await asyncio.sleep(3)
                     user_input_time -=3
                 await finish_countdown.edit("🚨 Beep! Beep!! **TIME'S UP!!!**")
@@ -160,8 +154,8 @@ async def set_timer(client, message):
                 while user_input_time>0 and not stoptimer:
                     m=user_input_time%3600//60
                     s=user_input_time%60
-                    Countdown_TeLe_TiPs='{}\n\n⏳ {:02d}**m** : {:02d}**s**\n\n<i>"Your **Time** Is Limited, So Don\'t Waste It Living Someone Else\'s Life"</i>\n      - Steve Jobs'.format(user_input_event, m, s)
-                    finish_countdown = await get_user_input_time.edit(Countdown_TeLe_TiPs)
+                    Countdown_SVF='{}\n\n⏳ {:02d}**m** : {:02d}**s**\n\n<i>"Your **Time** Is Limited, So Don\'t Waste It Living Someone Else\'s Life"</i>\n      - Steve Jobs'.format(user_input_event, m, s)
+                    finish_countdown = await get_user_input_time.edit(Countdown_SVF)
                     await asyncio.sleep(3)
                     user_input_time -=3
                 await finish_countdown.edit("🚨 Beep! Beep!! **TIME'S UP!!!**")
@@ -170,8 +164,8 @@ async def set_timer(client, message):
                     h=user_input_time%(3600*24)//3600
                     m=user_input_time%3600//60
                     s=user_input_time%60
-                    Countdown_TeLe_TiPs='{}\n\n⏳ {:02d}**h** : {:02d}**m** : {:02d}**s**\n\n<i>"Your **Time** Is Limited, So Don\'t Waste It Living Someone Else\'s Life"</i>\n      - Steve Jobs'.format(user_input_event, h, m, s)
-                    finish_countdown = await get_user_input_time.edit(Countdown_TeLe_TiPs)
+                    Countdown_SVF='{}\n\n⏳ {:02d}**h** : {:02d}**m** : {:02d}**s**\n\n<i>"Your **Time** Is Limited, So Don\'t Waste It Living Someone Else\'s Life"</i>\n      - Steve Jobs'.format(user_input_event, h, m, s)
+                    finish_countdown = await get_user_input_time.edit(Countdown_SVF)
                     await asyncio.sleep(7)
                     user_input_time -=7
                 await finish_countdown.edit("🚨 Beep! Beep!! **TIME'S UP!!!**")
@@ -181,8 +175,8 @@ async def set_timer(client, message):
                     h=user_input_time%(3600*24)//3600
                     m=user_input_time%3600//60
                     s=user_input_time%60
-                    Countdown_TeLe_TiPs='{}\n\n⏳ {:02d}**d** : {:02d}**h** : {:02d}**m** : {:02d}**s**\n\n<i>"Your **Time** Is Limited, So Don\'t Waste It Living Someone Else\'s Life"</i>\n      - Steve Jobs'.format(user_input_event, d, h, m, s)
-                    finish_countdown = await get_user_input_time.edit(Countdown_TeLe_TiPs)
+                    Countdown_SVF='{}\n\n⏳ {:02d}**d** : {:02d}**h** : {:02d}**m** : {:02d}**s**\n\n<i>"Your **Time** Is Limited, So Don\'t Waste It Living Someone Else\'s Life"</i>\n      - Steve Jobs'.format(user_input_event, d, h, m, s)
+                    finish_countdown = await get_user_input_time.edit(Countdown_SVF)
                     await asyncio.sleep(9)
                     user_input_time -=9
                 await finish_countdown.edit("🚨 Beep! Beep!! **TIME'S UP!!!**")
@@ -207,4 +201,4 @@ async def stop_timer(Client, message):
 print("Countdown Timer is alive!")
 bot.run()
 
-#Copyright ©️ 2021 TeLe TiPs. All Rights Reserved
+#Copyright ©️ 2021 SVF OFFICIAL. All Rights Reserved
