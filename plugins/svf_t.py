@@ -1,11 +1,11 @@
-#Copyright ©️ 2021 TeLe TiPs. All Rights Reserved
+#Copyright ©️ 2021 SVF. All Rights Reserved
 #You are free to use this code in any of your project, but you MUST include the following in your README.md (Copy & paste)
-# ##Credits - [Countdown Timer Telegram bot by TeLe TiPs] (https://github.com/teletips/CountdownTimer-TeLeTiPs)
+# ##Credits - [Countdown Timer Telegram bot by SVF] (https://github.com/teletips/CountdownTimer-TeLeTiPs)
 
-# Changing the code is not allowed! Read GNU AFFERO GENERAL PUBLIC LICENSE: https://github.com/teletips/CountdownTimer-TeLeTiPs/blob/main/LICENSE
+# Changing the code is not allowed! Read GNU AFFERO GENERAL PUBLIC LICENSE: https://github.com/OsharaShaveen/CountDown-TimerBot/blob/main/LICENSE
                        
   
-START_TEXT = 'Heya,\nMy name is **Countdown Timer** ⏰\n\nI can countdown to your important events in **any group chat**. 🎉\nUse me to keep track of how much time is left for the event ⏳\n\nHit **❓HELP** to find out more about how to use me.'
+START_TEXT = 'Hello Sir,\nMy name is **Countdown Timer** ⏰\n\nI can countdown to your important events in **any group chat**. 🎉\nUse me to keep track of how much time is left for the event ⏳\n\nHit **❓HELP** to find out more about how to use me.\n\n Master - @WhiteDevilOp999'
 
 GROUP_TEXT="""
 👥 <u>**Help & Support Groups**</u>
@@ -37,4 +37,4 @@ DO NOT do more than two (2) countdowns at the same time using the same bot. (Rea
 
 TUTORIAL_TEXT = "💡 Click the **🎥 Video** button to watch how to create this bot for your group."
 
-#Copyright ©️ 2021 TeLe TiPs. All Rights Reserved.
+#Copyright ©️ 2021 SVF. All Rights Reserved.
